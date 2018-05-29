@@ -20,5 +20,6 @@ Using the differential equation, the movement of the pendulum in the two-dimensi
 To make those colourful pictures, for every point in a limited area, the differntial equation is solved numerically, until the pendulum ends up at one of the magnets. The starting point then gets a value assigned to it corresponding to the magnet. From this file you are able to create a picture.
 
 <p align="center">
-  <img src="examples/2_magnets_2500x2500.png" width="450"/>
+  <img src="examples/2_magnets_2500x2500.png" width="350"/>
+  <img src="examples/8_magnets_2500x2500.png" width="350"/>
 </p>
