@@ -96,7 +96,7 @@ int getColour(double x, double y, int N)
         angle += 2 * M_PI;
     }
     int i;
-    //iterator over the rest of the sectors
+    //iterate over the rest of the sectors
     for (i = 1; i < N; i++)
     {
         //test if the pendulum is in the sector
@@ -189,6 +189,7 @@ int main(int argc, char **argv)
     int c, err = 0;
     static char usage[] = "usage: magnets.exe [-qhu] [-o outputFile] [-f force] [-m magnets] [-z zoom] [-y drag] [-k spring_constant]\n";
 
+    // COMMAND-LINE START
     //o:outputFile m:magnets z:zoom f:force q_quiet h_help u_usage y:drag k:spring_constant o:outputfile
     while ((c = getopt(argc, argv, "o:m:z:f:qhuy:k:")) != -1)
     {
@@ -284,12 +285,13 @@ int main(int argc, char **argv)
         printf(usage);
         return 0;
     }
+    // COMMAND-LINE END
 
     //terminate program for false parameters, one magnet only would produce a one color image
     if (N == 1)
     {
-         printf("really?");
-         return 0;
+        printf("really?");
+        return 0;
     }
 
     //approx amount of pixels
@@ -306,7 +308,7 @@ int main(int argc, char **argv)
 
     int current_pixels = 0;
     FILE *file = fopen(outputFile, "w");
-    // go through a x-y grid 
+    // go through a x-y grid
     for (double x = -ZOOM; x <= ZOOM + STEP; x += STEP)
     {
         for (double y = -ZOOM; y <= ZOOM + STEP; y += STEP)
@@ -335,6 +337,7 @@ int main(int argc, char **argv)
                     }
                 }
                 printf("| %d %%", percent);
+                fflush (stdout);
             }
         }
         fprintf(file, "\n"); // newline after each row
