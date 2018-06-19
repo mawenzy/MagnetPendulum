@@ -23,3 +23,7 @@ To make those colourful pictures, for every point in a limited area, the differn
   <img src="examples/2_magnets_2500x2500.png" width="350"/>
   <img src="examples/8_magnets_2500x2500.png" width="350"/>
 </p>
+
+## Content
+
+### 
