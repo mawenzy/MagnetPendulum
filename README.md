@@ -26,4 +26,18 @@ To make those colourful pictures, for every point in a limited area, the differn
 
 ## Content
 
-### 
+### [magneticPendulum.c](src/magneticPendulum.c)
+
+Source code to create a file from which a picture can be created. This file contains a matrix of numbers, one for each pixel.
+
+Usage for the compiled programm:
+```
+magnets.exe [-qhu] [-o outputFile] [-f force] [-m magnets] [-z zoom] [-y drag] [-k spring_constant]
+```
+Disclaimer:
+
+The programs stop condition is solely based on the kinetic energy the pendulum has left. After the energy drops below a certain point, then the program stops and calculates the color/number corresponding to the circle sector the pendulum is in. This stop condition is far from physically correct. Given a setup without any magnets, the pendulum would behave as a regular harmonic pendulum. When it reaches the turning point, it\`s kinetic energy is zero, terminating the program, although the pendulum still has potential energy. Of course the pendulum would move further in this case, and if drag is taken into account, move closer and closer to the equilibrium position.
+
+### [magnet.txt](src/magnet.txt)
+
+Example script, which would allow you to convert the file containing numbers from [magneticPendulum.c](src/magneticPendulum.c) to an image using gnuplot.
